@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Local apps
+    'tlm.apps.core',
+    'tlm.apps.users',
 ]
 
 MIDDLEWARE = [
@@ -51,10 +55,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tlm.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +71,18 @@ TEMPLATES = [
         },
     },
 ]
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'project_static'),
+)
+
+# List of finder classes that know how to find static files in
+# various locations.
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
 
 WSGI_APPLICATION = 'tlm.wsgi.application'
 
@@ -80,6 +97,17 @@ DATABASES = {
     }
 }
 
+# ------------------------------
+# AUTHORIZATION
+
+# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-user-model
+# https://docs.djangoproject.com/en/2.1/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project
+AUTH_USER_MODEL = 'users.User'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+# ------------------------------
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -115,6 +143,21 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# ------------------------------
+# MEDIA CONFIGURATION
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
+
+STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Add media directory and its base url for user uploads
+MEDIA_URL = '/site_media/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "site_media/")

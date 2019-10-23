@@ -1,41 +1,21 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# .gitignore for current project
+### Files private to developers
+tlm/settings/private.py
 
-# C extensions
-*.so
+### Python artifacts
+*.pyc
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+### Project local files and directories
+db.sqlite3
+tlm/static/
+tlm/staticfiles/
+logs/*
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
+### Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+###  Unit test / coverage reports
 htmlcov/
 .tox/
 .coverage
@@ -47,58 +27,61 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# Translations
+### Editor and IDE artifacts
+*~
+*.swp
+*.orig
+/nbproject
+.idea/
+.redcar/
+codekit-config.json
+.pycharm_helpers/
+
+### NFS artifacts
+.nfs*
+
+### OS X artifacts
+*.DS_Store
+.AppleDouble
+:2e_*
+:2e#
+
+### Internationalization artifacts
 *.mo
-*.pot
+*.po
+*.prob
+*.dup
+!django.po
+!django.mo
+!djangojs.po
+!djangojs.mo
 
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
+### Testing artifacts
+.testids/
+.noseids
 
-# Flask stuff:
-instance/
-.webassets-cache
+### Installation artifacts
+*.egg-info
+.pip_download_cache/
+.prereqs_cache
+.vagrant/
+node_modules
+.bundle/
+bin/
 
-# Scrapy stuff:
-.scrapy
+### Logging artifacts
+chromedriver.log
+ghostdriver.log
 
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
+### Celery artifacts ###
 celerybeat-schedule
 
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+### Other artifacts
+database.sqlite
+flushdb.sh
+build
+/src/
+\#*\#
+.env/
+autodeploy.properties
+.ws_migrations_complete

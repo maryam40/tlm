@@ -1,0 +1,10 @@
+# Packages required in a production environment
+-r base.txt
+
+certifi==2016.9.26
+django-ses==0.8.9
+dj-database-url==0.5.0
+gevent==1.4.0
+gunicorn==19.9.0
+mysqlclient==1.4.1
+python-memcached==1.59
