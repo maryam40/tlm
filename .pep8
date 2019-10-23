@@ -1,0 +1,11 @@
+[pycodestyle]
+count = False
+ignore = E501
+max-line-length = 120
+statistics = True
+exclude = settings,migrations,tlm/static,tlm/project_static,tlm/wsgi.py
+
+[pydocstyle]
+inherit = false
+match = (?!\d{4}_).*\.py
+ignore = D100, D104, D105, D106, D200, D203, D212, D406, D407
