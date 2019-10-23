@@ -1,0 +1,16 @@
+[run]
+branch = True
+data_file = .coverage
+source=tlm
+omit =
+    tlm/settings*
+    tlm/apps/core/tests/factories.py
+    tlm/apps/users/tests/factories.py
+    manage.py
+    *conftest.py
+    *wsgi.py
+    *migrations*
+    *admin.py
+    *static*
+    *project_static*
+    *templates*
